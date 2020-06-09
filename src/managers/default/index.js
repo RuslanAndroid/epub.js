@@ -229,7 +229,9 @@ class DefaultViewManager {
 	}
 
 	createView(section) {
-		return new this.View(section, this.viewSettings);
+		var view = new this.View(section, this.viewSettings);
+		view.on(EVENTS.MANAGERS.LOG, (text) => this.emit(EVENTS.MANAGERS.LOG, text));
+		return view;
 	}
 
 	display(section, target){

@@ -19,6 +19,7 @@ export const EVENTS = {
   },
   MANAGERS : {
     RESIZE : "resize",
+    LOG : "rn_logging",
     RESIZED : "resized",
     ORIENTATION_CHANGE : "orientationchange",
     ADDED : "added",

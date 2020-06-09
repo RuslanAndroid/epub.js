@@ -240,6 +240,7 @@ class Rendition {
 
 		// Listen for scroll changes
 		this.manager.on(EVENTS.MANAGERS.SCROLLED, this.reportLocation.bind(this));
+		this.manager.on(EVENTS.MANAGERS.LOG, (text) => this.emit(EVENTS.MANAGERS.LOG, text));
 
 		/**
 		 * Emit that rendering has started
