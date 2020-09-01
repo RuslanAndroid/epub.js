@@ -206,7 +206,7 @@ class ContinuousViewManager extends DefaultViewManager {
 				clearTimeout(this.trimTimeout);
 				this.trimTimeout = setTimeout(function(){
 					this.q.enqueue(this.trim.bind(this));
-				}.bind(this), 3000);
+				}.bind(this), 250);
 			}
 
 		}
