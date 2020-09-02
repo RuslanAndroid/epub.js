@@ -200,13 +200,13 @@ class ContinuousViewManager extends DefaultViewManager {
 				}
 				visible.push(view);
 			} else {
-				this.q.enqueue(view.destroy.bind(view));
 				// console.log("hidden " + view.index);
 
 				clearTimeout(this.trimTimeout);
 				this.trimTimeout = setTimeout(function(){
+					this.q.enqueue(view.destroy.bind(view));
 					this.q.enqueue(this.trim.bind(this));
-				}.bind(this), 250);
+				}.bind(this), 3000);
 			}
 
 		}
