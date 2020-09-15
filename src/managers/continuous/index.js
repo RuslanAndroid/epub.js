@@ -173,7 +173,7 @@ class ContinuousViewManager extends DefaultViewManager {
 		var views = this.views.all();
 		var viewsLength = views.length;
 		var visible = [];
-		var offset = (typeof _offset != "undefined" ? _offset : (this.settings.offset || 0)) * 5;
+		var offset = typeof _offset != "undefined" ? _offset : (this.settings.offset || 0);
 		var isVisible;
 		var view;
 
@@ -266,8 +266,7 @@ class ContinuousViewManager extends DefaultViewManager {
 
 		};
 
-		if (offset + visibleLength + (delta*5) >= contentLength) {
-
+		if (offset + visibleLength + delta >= contentLength) {
 			if (horizontal && rtl) {
 				prepend();
 			} else {
@@ -275,7 +274,7 @@ class ContinuousViewManager extends DefaultViewManager {
 			}
 		}
 
-		if (offset - (delta*5) < 0 ) {
+		if (offset - delta < 0 ) {
 			if (horizontal && rtl) {
 				append();
 			} else {
